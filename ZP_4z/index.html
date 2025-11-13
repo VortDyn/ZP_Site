@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор расхода топлива | Задание 4</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand"><a href="../index.html">← На главную</a></div>
+        <nav class="tabs"></nav>
+    </header>
+
+    <main>
+        <div class="intro-section">
+            <h1>Калькулятор расхода топлива</h1>
+            <h2>Вариант 2. Машины</h2>
+        </div>
+
+            <div class="container">
+                <div class="fuel">
+                    <div for="fuelRange">Выберите количество литров бензина:</div>
+                    <div class="range-container">
+                        <input type="range" id="fuelRange" min="0" max="100" value="50" step="1">
+                        <span id="fuelValue">50</span> л
+                    </div>
+                </div>
+
+                <div class="distance">
+                    <label for="distanceInput">Введите длину пути (км):</label>
+                    <input type="number" id="distanceInput" min="0" placeholder="Введите расстояние" value="100">
+                </div>
+
+                <div class="info">
+                    <h3>Расход бензина на 100 км:</h3>
+                    <ul>
+                        <li>для мотоцикла 5 л</li>
+                        <li>для машины 10 л</li>
+                    </ul>
+                </div>
+
+                <div class="buttons">
+                    <button class="vehicle-btn" id="motorcycleBtn">
+                        <div class="vehicle-icon"></div>
+                        <img class="vehicle-icon" src="./images/moto.png" alt="описание картинки">
+                        <div class="vehicle-name">Мотоцикл</div>
+                    </button>
+                    <button class="vehicle-btn" id="carBtn">
+                        <img class="vehicle-icon" src="./images/car.png" alt="описание картинки">
+                        <div class="vehicle-name">Машина</div>
+                    </button>
+                </div>
+
+                <div class="result" id="resultSection">
+                    <div id="resultText"></div>
+                    <img class="emoji-icon">
+                </div>
+            </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

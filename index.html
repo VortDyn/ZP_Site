@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Злобин Пётр | Портфолио</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <svg class="logo-polygon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="50,10 90,35 75,85 25,85 10,35" fill="url(#gradient1)"/>
+                        <polygon points="50,30 75,50 65,75 35,75 25,50" fill="url(#gradient2)"/>
+                        <polygon points="50,20 20, 20 0, 0 -20, -20 0,50" fill="url(#gradient1)"/>
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text">Полигональный стиль | Злобин Пётр</span>
+                </a>
+
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="nav" id="navMenu">
+                    <a href="#main" class="nav-link">Главная</a>
+                    <a href="#about" class="nav-link">О проекте</a>
+                    <a href="#works" class="nav-link">Мои работы</a>
+                    <a href="#gallery" class="nav-link">Галерея</a>
+                    <a href="#contact" class="nav-link">Контакты</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="hero-background">
+                <div class="polygon polygon-1"></div>
+                <div class="polygon polygon-2"></div>
+                <div class="polygon polygon-3"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Злобин Пётр</h1>
+                    <p>Верстка и прототипирование сайтов</p>
+                    <a href="#works" class="btn btn-primary">Посмотреть работы</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>О проекте</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Добро пожаловать на моё мини-портфолио по предмету "Верстка и прототипирование сайтов"! Здесьт представлена сила и гибкость современных веб-технологий через стили полигональной графики и интерактивных элементов. Я считаю, что полигональный стиль — это не просто модное направление в дизайне, это красота, которая сочетает минимализм с многоульными(может и не всегда) формами.
+                        </p>
+                        <p>
+                            В наше время веб-разработка переживает эпоху трансформации. От простых статических страниц мы перешли к динамичным, интерактивным приложениям, которые могут обеспечивать богатый пользовательский опыт. Полигональная графика — это одна из самых современных и привлекательных технологий в веб-дизайне. Она позволяет создавать сложные визуальные эффекты с помощью простых геометрических форм, что делает процесс разработки более эффективным и творческим одновременно.
+                        </p>
+                        <p>
+                            Сайт создан в рамках курса с использованием чистого HTML, CSS и JavaScript без использования каких-либо фреймворков или библиотек. Все анимации, логотип и адаптивный дизайн реализованы с нуля. Я старался проработать каждую деталь максимально эффективно и представить в лучшем качестве.
+                        </p>
+                        <p>
+                            На этом сайте вы найдёте мои работы, которые стали результатом изучения курса. Работы связаны с элементами и классами HTLM/CSS, а также с Анимациями и JS-кодом.
+                        </p>
+                        <p>
+                            Адаптивный дизайн гарантирует, что сайт отлично выглядит на экранах любых размеров: от мобильных телефонов до больших настольных мониторов.
+                        </p>
+                        <p>
+                            Разработано студентом: <strong>Злобин Пётр</strong>, группа <strong>5130903/30301</strong>. Это портфолио создано как часть учебного проекта для демонстрации навыков верстки и прототипирования сайтов.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="works">
+            <div class="container">
+                <h2>Мои работы</h2>
+                <div class="works-grid">
+                    <div class="work-card">
+                        <div class="work-card-header">
+                            <h3>Пиратский корабль</h3>
+                        </div>
+                        <div class="work-card-body">
+                            <p>CSS рисунок без использования изображений. На ней изображён пиратский корабль с выполненными деталями: мачта, парус, флаг с пиратским черепом, иллюминаторы, волны, небо и солнце. Создание сложных визуальных композиций из простых фигур.</p>
+                            <ul class="tech-list">
+                                <li>CSS</li>
+                                <li>Basics</li>
+                                <li>Gradients</li>
+                                <li>HTML</li>
+                                <li>Transforms</li>
+                            </ul>
+                        </div>
+                        <a href="ZP_1z_4var/index.html" class="btn btn-secondary">Открыть работу</a>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-card-header">
+                            <h3>Анимированный магазин игрушек</h3>
+                        </div>
+                        <div class="work-card-body">
+                            <p>Интерактивная сцена шкафа с игрушками с использованием CSS-анимациями. На магазинной полке расположены игрушки, которые оживают при наведении курсора: машинка ездит, кораблик качается, человечек прыгает. Включает эффекты наведения и систему взаимодействия через HTML чекбоксы. Полностью реализовано на CSS и HTML.</p>
+                            <ul class="tech-list">
+                                <li>CSS Animations</li>
+                                <li>Keyframes</li>
+                                <li>Hover Effects</li>
+                            </ul>
+                        </div>
+                        <a href="ZP_2z_3var/index.html" class="btn btn-secondary">Открыть работу</a>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-card-header">
+                            <h3>Калькулятор расхода топлива</h3>
+                        </div>
+                        <div class="work-card-body">
+                            <p>Простенькое веб-приложение для расчёта расхода топлива в зависимости от выбранного транспорта и дальности поездки. Включает динамический ползунок для выбора количества топлива, валидацию введённых данных и подробные результаты расчётов. Применяются также математическими расчёты в JavaScript.</p>
+                            <ul class="tech-list">
+                                <li>Javascript Basics</li>
+                                <li>Slider</li>
+                                <li>JavaScript Logic</li>
+                                <li>Data Validation</li>
+                                <li>Math</li>
+                            </ul>
+                        </div>
+                        <a href="ZP_4z/index.html" class="btn btn-secondary">Открыть работу</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2>Основы стиля</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        <h3>Полигональный градиент</h3>
+                        <p>Современный подход к дизайну с использованием геометрических форм и плавных цветовых переходов</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                        <h3>Динамичные переходы</h3>
+                        <p>Использование CSS-переходов для создания плавных анимаций между различными состояниями элементов</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                        <h3>Интерактивность</h3>
+                        <p>Создание отзывчивых элементов, которые реагируют на действия пользователя в реальном времени</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                        <h3>Адаптивный дизайн</h3>
+                        <p>Построение сайтов, которые идеально выглядят на любых устройствах: от мобильных до настольных компьютеров</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                        <h3>Креативность</h3>
+                        <p>Применение нестандартных подходов и экспериментов для достижения уникального визуального эффекта</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
+                        <h3>Совершенство кода</h3>
+                        <p>Написание чистого, читаемого и эффективного кода без использования внешних библиотек и фреймворков</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2>Мои навыки</h2>
+                <div class="skills-content">
+                    <p>В процессе работы над этим портфолио я приобрел и применил следующие навыки веб-разработки и дизайна. Каждый из этих навыков был применен в создании этого сайта и работ, представленных в портфолио.</p>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <h3>HTML</h3>
+                            <p>Создание правильной структуры страницы с использованием технологии HTML, её тегов и атрибутов.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>CSS & Дизайн</h3>
+                            <p>Создание сложных визуальных эффектов с использованием современных CSS свойств: gradients, clip-path, transforms, animations, flexbox и grid.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Адаптивный дизайн</h3>
+                            <p>Разработка сайтов, которые отлично выглядят и работают на всех устройствах, от мобильных телефонов до компьютеров.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>JavaScript</h3>
+                            <p>Написание чистого и эффективного JavaScript кода для интерактивности.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Аниматика</h3>
+                            <p>Создание плавных и привлекательных анимаций с использованием CSS keyframes, transitions и JavaScript для повышения пользовательского опыта.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Портфолио</h2>
+                <div class="contact-content">
+                    <p>Если у вас есть вопросы относительно предложений, пожалуйста, не стесняйтесь обращаться ко мне.</p>
+                    <div class="contact-info">
+                        <p>Злобин Пётр</p>
+                        <p>5130903/30301</p>
+                        <p>СПбПУ</p>
+                        <p>Прикладная информатика</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Злобин Пётр</p>
+            <p>Создано с использованием чистого HTML, CSS и JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+.background {
+    position: relative;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.backgroundshelf {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-image: url("images/toy1.png");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.overlay-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-size: 14px;
+    transition: transform 0.3s ease, bottom 0.3s ease;
+}
+
+.backgroundshelf:hover .overlay-title {
+    bottom: 0;
+}
+.backgroundshelf:active{
+    filter: sepia(1);
+}
+
+.buy-toggle { position: absolute; opacity: 0; }
+
+.car {
+    position: absolute;
+    left: 30px;
+    top: 24px;
+    width: 50px;
+    height: 32px;
+    background-image: url("images/toy3.png");
+    background-size: 50px 32px;
+    cursor: help;
+}
+
+@keyframes car-drive {
+    0% { transform: translateX(-15px); }
+    50% { transform: translateX(15px); }
+    100% { transform: translateX(-15px); }
+}
+
+.backgroundshelf:hover .car {
+    animation: car-drive 1.2s ease-in-out infinite;
+}
+
+.ship {
+    position: absolute;
+    left: 80px;
+    top: 105px;
+    width: 50px;
+    height: 32px;
+    background-image: url("images/toy2.png");
+    background-size: 50px 32px;
+}
+
+@keyframes ship-rock {
+    0% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(-6deg) translateY(1px); }
+    50% { transform: rotate(0deg) translateY(0); }
+    75% { transform: rotate(6deg) translateY(1px); }
+    100% { transform: rotate(0deg) translateY(0); }
+}
+
+.ship:hover {
+    transform-origin: 50% 60%;
+    animation: ship-rock 1.2s ease-in-out infinite;
+}
+
+.man {
+    position: absolute;
+    left: 0px;
+    top: 75px;
+    width: 60px;
+    height: 80px;
+    background-image: url("images/toy4.png");
+    background-size: 60px 80px;
+    transform: translateX(-70px);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.4s ease;
+}
+
+.buy-label {
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    background: #ffe08a;
+    border: 3px solid #e0b500;
+    color: #3c2f00;
+    font-size: 12px;
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(-6px) rotate(-35deg);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.buy-toggle:checked ~ .buy-label {
+    opacity: 1;
+    transform: translateY(0)  rotate(-35deg);
+}
+
+@keyframes man-hop-right {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(25px, -18px); }
+    40% { transform: translate(55px, 0px); }
+    60% { transform: translate(90px, -6px); }
+    75% { transform: translate(125px, 0px); }
+    90% { transform: translate(160px, -27px); }
+    100% { transform: translate(240px, 0px); }
+}
+
+.buy-toggle:checked ~ .man {
+    opacity: 1;
+    transform: translateX(0);
+    animation: man-hop-right 1.5s forwards;
+}

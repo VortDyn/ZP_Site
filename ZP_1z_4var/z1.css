@@ -1,0 +1,162 @@
+/* Сама наша сцена */
+.scene {
+  width: 200px;
+  height: 200px;
+  border: 4px solid #000000;
+  position: relative;
+  background: linear-gradient(135deg, #e6f2ff 0%, #c7e0ff 40%, #98bcff 100%);
+  overflow: hidden;
+}
+
+/* Солнце */
+.sun {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFFF00 0%, #FFFFB8 100%);
+  top: -16px;
+  left: -16px;
+}
+
+/* Арки */
+.arch {
+  position: absolute;
+  width: 42px;
+  height: 100px;
+  border: 20px solid #a7afb8;
+  border-bottom: none;
+  border-radius: 60px 60px 0 0;
+  bottom: 40px;
+}
+.a2{left: 67px;}
+.a3{left: 134px;}
+
+/* Позиция для корабля */
+.ship {
+  position: absolute;
+  left: 45px;
+  right: 40px;
+  bottom: 50px;
+  height: 72px;
+}
+
+/* Корпус (трапеция) */
+.corpus {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 38px;
+  background: #614271;
+  clip-path: polygon(0 0, 94% 0, 84% 100%, 16% 100%);
+}
+.plank {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: #c07a38;
+}
+.p1 { top: 8px; }
+.p2 { top: 20px; }
+
+/* Иллюминаторы */
+.illuminators {
+  position: absolute;
+  bottom: 16px;
+  left: 32px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 8px;
+}
+.illuminator {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 7px;
+}
+
+/* Мачта */
+.machta {
+  position: absolute;
+  bottom: 38px;
+  left: calc(50% - 6px);
+  width: 10px;
+  height: 88px;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Парус (красный треугольник) */
+.parus {
+  position: absolute;
+  bottom: 62px;
+  left: calc(50% - 6px);
+  width: 0;
+  height: 0;
+  border-left: 90px solid #ef3340;
+  border-top: 64px solid transparent;
+}
+
+/* Флаг */
+.flag {
+  position: absolute;
+  bottom: 118px;
+  left: calc(50% - 6px);
+  width: 60px;
+  height: 36px;
+  background: #0a0a0a;
+  border-radius: 0 6px 6px 0;
+}
+.bone {
+  position: absolute;
+  width: 36px;
+  height: 6px;
+  top: 14px;
+  left: 12px;
+  background: white;
+  border-radius: 3px;
+}
+.b1 { transform: rotate(35deg); }
+.b2 { transform: rotate(-35deg); }
+
+.circle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  left: 36px;
+  top: 5px;
+}
+.c1 { left: 36px; top: 4px; }
+.c2 { left: 13px; top: 4px; }
+.c3 { left: 13px; top: 20px; }
+.c4 { left: 36px; top: 20px; }
+
+/* Волны */
+.waves {
+  position: absolute;
+  left: -30px;
+  right: -30px;
+  bottom: -20px;
+}
+.wave {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #a9c9ff;
+  filter: blur(.2px);
+}
+.wave.light { background: #bed7ff; }
+.wave.dark  { background: #8fb7ff; }
+
+.w1 { left: -10px; bottom: 10px; }
+.w2 { left: 60px; bottom: 18px; }
+.w3 { left: 120px; bottom: 12px; }
+.w4 { left: 180px; bottom: 22px; }
+.w5 { left: 20px; bottom: -8px; }
+.w6 { left: 100px; bottom: -6px; }
+.w7 { left: 170px; bottom: -12px; }
