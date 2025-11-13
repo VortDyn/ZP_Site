@@ -11,21 +11,11 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <svg class="logo-polygon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="50,10 90,35 75,85 25,85 10,35" fill="url(#gradient1)"/>
-                        <polygon points="50,30 75,50 65,75 35,75 25,50" fill="url(#gradient2)"/>
-                        <polygon points="50,20 20, 20 0, 0 -20, -20 0,50" fill="url(#gradient1)"/>
-                        <defs>
-                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" />
-                            </linearGradient>
-                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                  <div class="logo-image-container">
+                    <div class="logo-polygon logo-polygon-1"></div>
+                    <div class="logo-polygon logo-polygon-2"></div>
+                    <div class="logo-polygon logo-polygon-3"></div>
+                  </div>
                     <span class="logo-text">Полигональный стиль | Злобин Пётр</span>
                 </a>
 
@@ -152,37 +142,37 @@
                 <h2>Основы стиля</h2>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        <div class="gallery-image" style="--bg-image: url('images/polygon.jpg'); background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
                         <h3>Полигональный градиент</h3>
                         <p>Современный подход к дизайну с использованием геометрических форм и плавных цветовых переходов</p>
                     </div>
 
                     <div class="gallery-item">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                        <div class="gallery-image" style="--bg-image: url('images/perehody.jpg'); background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
                         <h3>Динамичные переходы</h3>
                         <p>Использование CSS-переходов для создания плавных анимаций между различными состояниями элементов</p>
                     </div>
 
                     <div class="gallery-item">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                        <div class="gallery-image" style="--bg-image: url('images/interactive.webp'); background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
                         <h3>Интерактивность</h3>
                         <p>Создание отзывчивых элементов, которые реагируют на действия пользователя в реальном времени</p>
                     </div>
 
                     <div class="gallery-item">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                        <div class="gallery-image" style="--bg-image: url('images/adaptive.jpg'); background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
                         <h3>Адаптивный дизайн</h3>
                         <p>Построение сайтов, которые идеально выглядят на любых устройствах: от мобильных до настольных компьютеров</p>
                     </div>
 
                     <div class="gallery-item">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                        <div class="gallery-image" style="--bg-image: url('images/creativity.jpg'); background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
                         <h3>Креативность</h3>
                         <p>Применение нестандартных подходов и экспериментов для достижения уникального визуального эффекта</p>
                     </div>
 
                     <div class="gallery-item">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
+                        <div class="gallery-image" style="--bg-image: url('images/absolute.avif'); background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
                         <h3>Совершенство кода</h3>
                         <p>Написание чистого, читаемого и эффективного кода без использования внешних библиотек и фреймворков</p>
                     </div>
@@ -240,7 +230,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Злобин Пётр</p>
-            <p>Создано с использованием чистого HTML, CSS и JavaScript</p>
+            <p>Создано ручками с использованием чистого HTML, CSS и JavaScript</p>
         </div>
     </footer>
 

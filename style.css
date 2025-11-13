@@ -47,6 +47,45 @@ body {
     padding: 15px 0;
 }
 
+ logo-image {
+     margin: 0;
+     padding: 40px;
+     background: #1a1a1a;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+ }
+
+.logo-image-container {
+    width: 45px;
+    height: 45px;
+    position: relative;
+}
+
+.logo-polygon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* внешний */
+.logo-polygon-1 {
+    background: linear-gradient(135deg, #00d4ff 0%, #0066ff 100%);
+    clip-path: polygon(50% 10%, 90% 35%, 75% 85%, 25% 85%, 10% 35%);
+}
+
+/* внутренний */
+.logo-polygon-2 {
+    background: linear-gradient(135deg, #7c3aed 0%, #0066ff 100%);
+    clip-path: polygon(50% 30%, 75% 50%, 65% 75%, 35% 75%, 25% 50%);
+}
+
+.logo-polygon-3 {
+    background: linear-gradient(135deg, #37ff00 0%, #ffc400 100%);
+    clip-path: polygon(50% 20%, 20% 20%, 0% 0%, 0% 50%);
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -59,7 +98,7 @@ body {
 }
 
 .logo:hover {
-    transform: scale(1.05) rotate(-5deg);
+    transform: scale(1.05) rotate(-1deg);
 }
 
 .logo-polygon {
@@ -216,8 +255,7 @@ body {
     border: 2px solid;
     cursor: pointer;
     font-size: 16px;
-
-    margin-left: 20%;
+    text-decoration: none;
 }
 
 .btn-primary {
@@ -408,7 +446,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,10 90,40 70,90 30,90 10,40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><polygon points="50,30 80,50 60,80 40,80 20,50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+    background-image: var(--bg-image); /* используем переменную */
+    background-size: 100% 100%;
     opacity: 0.5;
 }
 
