@@ -80,6 +80,7 @@ function renderQuestions() {
         questionBlock.id = 'question-' + i;
         questionBlock.setAttribute('data-index', i);
 
+
         var questionNum = document.createElement('div');
         questionNum.className = 'question-number';
         questionNum.textContent = 'Вопрос ' + (i + 1);
@@ -286,11 +287,13 @@ function moveToNextQuestion() {
     if (answeredQuestions.length === shuffledQuestions.length) {
         endQuiz();
     } else {
+        console.log(questions)
         // Очищаем область ответов
         document.getElementById('answersContainer').innerHTML = '';
         document.getElementById('statusMessage').textContent = 'Выберите следующий вопрос';
-        currentQuestionIndex = -1;
+        var questionBlock2 = document.getElementById('question-' + (currentQuestionIndex+1));
         isAnswered = false;
+
     }
 }
 
