@@ -76,7 +76,7 @@ function createWordElement(key, value) {
     wordElement.setAttribute('data-value', value);
     wordElement.setAttribute('data-origin', 'block2');
 
-    var color = '#e0e0e0';
+    var color = '#79e145';
     wordElement.style.backgroundColor = color;
     originalColors[key] = color;
 
@@ -93,72 +93,12 @@ function dragStart(e) {
     e.stopPropagation();
 }
 
-function dragOverItem(e) {
-    if (e.target.classList.contains('word-item') && e.target !== draggedElement) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.target.classList.add('drag-over');
-    }
-}
-
-function dragLeaveItem(e) {
-    if (e.target.classList.contains('word-item')) {
-        e.target.classList.remove('drag-over');
-    }
-}
-
-function dropOnItem(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    if (!draggedElement || e.target === draggedElement) return;
-
-    var targetItem = e.target.closest('.word-item');
-    if (targetItem) {
-        targetItem.classList.remove('drag-over');
-    }
-
-    if (targetItem && targetItem !== draggedElement) {
-        var container = targetItem.querySelector('.nested-container');
-        if (!container) {
-            container = document.createElement('div');
-            container.className = 'nested-container';
-            targetItem.appendChild(container);
-        }
-
-        draggedElement.style.opacity = '1';
-        container.appendChild(draggedElement);
-
-        var currentOrigin = draggedElement.getAttribute('data-origin');
-        if (currentOrigin === 'block2') {
-            var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-            draggedElement.style.backgroundColor = randomColor;
-            draggedElement.setAttribute('data-origin', 'block1');
-
-            var key = draggedElement.getAttribute('data-key');
-            var value = draggedElement.getAttribute('data-value');
-            var textSpan = draggedElement.querySelector('.word-text');
-            if (textSpan) {
-                textSpan.textContent = key + ' ' + value;
-            }
-
-            draggedElement.addEventListener('click', handleCardClick);
-        }
-    }
-
-    draggedElement = null;
-}
-
 function handleCardClick(event) {
-    event.stopPropagation();
-    var value = this.getAttribute('data-value');
-    clickedWords.push(value);
-    updateDisplayArea();
-}
-
-function updateDisplayArea() {
-    var displayArea = document.getElementById('displayArea');
-    displayArea.textContent = clickedWords.join(' ');
+    if (event.target.closest('.drop-zone').id === 'dropZone1'){
+        var value = this.getAttribute('data-value');
+        clickedWords.push(value);
+        updateDisplayArea();
+    }
 }
 
 var dropZone1 = document.getElementById('dropZone1');
@@ -171,6 +111,15 @@ dropZone1.addEventListener('dragend', dragEnd);
 dropZone2.addEventListener('dragover', dragOver);
 dropZone2.addEventListener('drop', function(e) { dragDrop(e, 'block2'); });
 dropZone2.addEventListener('dragend', dragEnd);
+
+function getRandomColor() {
+    var colors = [
+        '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7',
+        '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E9',
+        '#F8C471', '#82E0AA', '#F1948A', '#85C1E9', '#D7BDE2'
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
 
 function dragDropToBlock1(e) {
     e.preventDefault();
@@ -186,8 +135,7 @@ function dragDropToBlock1(e) {
     var currentOrigin = draggedElement.getAttribute('data-origin');
 
     if (currentOrigin === 'block2') {
-        var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-        draggedElement.style.backgroundColor = randomColor;
+        draggedElement.style.backgroundColor = getRandomColor();
         draggedElement.setAttribute('data-origin', 'block1');
 
         var key = draggedElement.getAttribute('data-key');
@@ -218,7 +166,7 @@ function dragDropToBlock1(e) {
     y = y - (cardHeight / 2);
 
     x = Math.max(0, Math.min(x, rect.width - cardWidth));
-    y = Math.max(0, Math.min(y, rect.height - cardHeight));
+    y = Math.max(0, Math.min(y, rect.height - cardHeight*1.5));
 
     draggedElement.style.left = x + 'px';
     draggedElement.style.top = y + 'px';
@@ -226,12 +174,6 @@ function dragDropToBlock1(e) {
     draggedElement = null;
 }
 
-function handleCardClick(event) {
-    event.stopPropagation();
-    var value = this.getAttribute('data-value');
-    clickedWords.push(value);
-    updateDisplayArea();
-}
 
 function updateDisplayArea() {
     var displayArea = document.getElementById('displayArea');
@@ -255,15 +197,15 @@ function dragOver(e) {
 function dragDrop(e, targetBlock) {
     if (!e.target.classList.contains('drop-zone')) return;
 
-    e.preventDefault();
     var key = e.dataTransfer.getData('text/plain');
 
     if (!draggedElement) return;
+    draggedElement.style.opacity = '1';
 
     var currentOrigin = draggedElement.getAttribute('data-origin');
 
     if (targetBlock === 'block2' && currentOrigin === 'block1') {
-        draggedElement.style.backgroundColor = originalColors[key];
+        draggedElement.style.backgroundColor = '#79e145';
         draggedElement.style.opacity = '1';
         draggedElement.setAttribute('data-origin', 'block2');
         draggedElement.style.position = '';
@@ -282,6 +224,8 @@ function dragDrop(e, targetBlock) {
         for (var i = 0; i < allItems.length; i++) {
             var itemKey = allItems[i].getAttribute('data-key');
             if (key < itemKey) {
+                console.log('Переносимое ' + key)
+                console.log('Старшее' + itemKey)
                 dropZone2.insertBefore(draggedElement, allItems[i]);
                 inserted = true;
                 break;
